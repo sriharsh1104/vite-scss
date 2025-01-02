@@ -19,7 +19,7 @@ const SignIn: React.FC = () => {
     },
   });
   return (
-    <div>
+    <div className="sign-up-container">
       <h2>Sign Up</h2>
       <form onSubmit={formik.handleSubmit}>
         <input
@@ -30,7 +30,7 @@ const SignIn: React.FC = () => {
           onBlur={formik.handleBlur}
         />
         {formik.touched.email && formik.errors.email ? (
-          <p>{formik.errors.email}</p>
+          <p className="error-message">{formik.errors.email}</p>
         ) : null}
         <input
           type="password"
@@ -40,7 +40,7 @@ const SignIn: React.FC = () => {
           onBlur={formik.handleBlur}
         />
         {formik.touched.password && formik.errors.password ? (
-          <p>{formik.errors.password}</p>
+          <p className="error-message">{formik.errors.password}</p>
         ) : null}
         <button type="submit"> Sign In</button>
       </form>

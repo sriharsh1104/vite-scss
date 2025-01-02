@@ -69,7 +69,7 @@ const SignUp: React.FC = () => {
         ) : null}
         <input
           type="text"
-          name="mobile"
+          name="Mobile"
           placeholder="Phone Number"
           onChange={formik.handleBlur}
           onBlur={formik.handleBlur}
@@ -85,7 +85,7 @@ const SignUp: React.FC = () => {
           onBlur={formik.handleBlur}
         />
         {formik.touched.password && formik.errors.password ? (
-          <p className="error-message" >{formik.errors.lastName}</p>
+          <p className="error-message">{formik.errors.lastName}</p>
         ) : null}
         <input
           type="password"
