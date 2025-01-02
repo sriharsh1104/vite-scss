@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import "./Header.scss"
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
