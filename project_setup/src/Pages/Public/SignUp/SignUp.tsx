@@ -1,8 +1,10 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { FormValues } from "./SignUp.types";
+import { useNavigate } from "react-router-dom";
 
 const SignUp: React.FC = () => {
+  const navigate = useNavigate();
   const formik = useFormik<FormValues>({
     initialValues: {
       firstName: "",
@@ -96,7 +98,9 @@ const SignUp: React.FC = () => {
         <button type="submit"> Sign Up</button>
       </form>
       <p>
-        Already Registered? <span>Sign In</span>
+        <span onClick={() => navigate("/signin")}>
+          Already Registered? <span>Sign In</span>
+        </span>
       </p>
     </div>
   );
