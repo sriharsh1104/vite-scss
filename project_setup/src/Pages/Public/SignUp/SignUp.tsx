@@ -2,6 +2,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { FormValues } from "./SignUp.types";
 import { useNavigate } from "react-router-dom";
+import "../SignUp/SignUp.scss";
 
 const SignUp: React.FC = () => {
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ const SignUp: React.FC = () => {
       email: Yup.string()
         .email("Invalid email address")
         .required("Email is required"),
+      Mobile: Yup.string().required("Phone Number is required"),
       password: Yup.string()
         .min(6, "password must be atleast 6 character")
         .required("password is required"),
@@ -32,7 +34,7 @@ const SignUp: React.FC = () => {
     },
   });
   return (
-    <div>
+    <div className="sign-up-container">
       <h2>SignUp</h2>
       <form onSubmit={formik.handleSubmit}>
         <input
@@ -43,7 +45,7 @@ const SignUp: React.FC = () => {
           onBlur={formik.handleBlur}
         />
         {formik.touched.firstName && formik.errors.firstName ? (
-          <p>{formik.errors.firstName}</p>
+          <p className="error-message">{formik.errors.firstName}</p>
         ) : null}
         <input
           type="text"
@@ -53,7 +55,7 @@ const SignUp: React.FC = () => {
           onBlur={formik.handleBlur}
         />
         {formik.touched.lastName && formik.errors.lastName ? (
-          <p>{formik.errors.lastName}</p>
+          <p className="error-message">{formik.errors.lastName}</p>
         ) : null}
         <input
           type="email"
@@ -63,17 +65,17 @@ const SignUp: React.FC = () => {
           onBlur={formik.handleBlur}
         />
         {formik.touched.email && formik.errors.email ? (
-          <p>{formik.errors.email}</p>
+          <p className="error-message">{formik.errors.email}</p>
         ) : null}
         <input
-          type="number"
+          type="text"
           name="mobile"
           placeholder="Phone Number"
           onChange={formik.handleBlur}
           onBlur={formik.handleBlur}
         />
         {formik.touched.Mobile && formik.errors.Mobile ? (
-          <p>{formik.errors.Mobile}</p>
+          <p className="error-message">{formik.errors.Mobile}</p>
         ) : null}
         <input
           type="password"
@@ -83,7 +85,7 @@ const SignUp: React.FC = () => {
           onBlur={formik.handleBlur}
         />
         {formik.touched.password && formik.errors.password ? (
-          <p>{formik.errors.lastName}</p>
+          <p className="error-message" >{formik.errors.lastName}</p>
         ) : null}
         <input
           type="password"
@@ -93,11 +95,11 @@ const SignUp: React.FC = () => {
           onBlur={formik.handleBlur}
         />
         {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
-          <p>{formik.errors.confirmPassword}</p>
+          <p className="error-message">{formik.errors.confirmPassword}</p>
         ) : null}
         <button type="submit"> Sign Up</button>
       </form>
-      <p>
+      <p className="sign-in-link">
         <span onClick={() => navigate("/signin")}>
           Already Registered? <span>Sign In</span>
         </span>
