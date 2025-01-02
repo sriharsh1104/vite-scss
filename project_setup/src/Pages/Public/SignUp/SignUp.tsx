@@ -8,7 +8,7 @@ const SignUp: React.FC = () => {
       firstName: "",
       lastName: "",
       email: "",
-      Mobile: 0,
+      Mobile: "",
       password: "",
       confirmPassword: "",
     },
@@ -54,7 +54,7 @@ const SignUp: React.FC = () => {
           <p>{formik.errors.lastName}</p>
         ) : null}
         <input
-          type="text"
+          type="email"
           name="email"
           placeholder="Email"
           onChange={formik.handleBlur}
@@ -95,6 +95,9 @@ const SignUp: React.FC = () => {
         ) : null}
         <button type="submit"> Sign Up</button>
       </form>
+      <p>
+        Already Registered? <span>Sign In</span>
+      </p>
     </div>
   );
 };

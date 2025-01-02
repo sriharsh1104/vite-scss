@@ -2,7 +2,7 @@ export interface FormValues {
     firstName: string;
     lastName: string;
     email: string;
-    Mobile:number;
+    Mobile:string;
     password: string;
     confirmPassword: string;
   }
