@@ -28,7 +28,7 @@ const AppRoutes: React.FC<RoutesProps> = ({ isAuthenticated }) => {
       )}
 
       {/* Default Route */}
-      <Route path="*" element={<Navigate to="/signup" />} />
+      <Route path="*" element={<Navigate to="/app" />} />
     </Routes>
   );
 };

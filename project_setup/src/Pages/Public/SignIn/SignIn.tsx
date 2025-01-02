@@ -16,11 +16,12 @@ const SignIn: React.FC = () => {
     }),
     onSubmit: (values) => {
       console.log("values", values);
+      navigate("/app/dashboard");
     },
   });
   return (
     <div className="sign-up-container">
-      <h2>Sign Up</h2>
+      <h2>Sign In</h2>
       <form onSubmit={formik.handleSubmit}>
         <input
           type="email"
@@ -45,8 +46,9 @@ const SignIn: React.FC = () => {
         <button type="submit"> Sign In</button>
       </form>
       <p>
-        <span onClick={() => navigate("/signup")}>
-          Don't have an account? <span>Sign Up</span>
+        <span>
+          Don't have an account?{" "}
+          <span onClick={() => navigate("/signup")}>Sign Up</span>
         </span>
       </p>
     </div>

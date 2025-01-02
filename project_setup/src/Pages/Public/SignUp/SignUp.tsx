@@ -100,8 +100,9 @@ const SignUp: React.FC = () => {
         <button type="submit"> Sign Up</button>
       </form>
       <p className="sign-in-link">
-        <span onClick={() => navigate("/signin")}>
-          Already Registered? <span>Sign In</span>
+        <span>
+          Already Registered?{" "}
+          <span onClick={() => navigate("/signin")}>Sign In</span>
         </span>
       </p>
     </div>

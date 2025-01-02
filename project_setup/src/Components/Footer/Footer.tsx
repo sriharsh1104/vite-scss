@@ -1,4 +1,11 @@
-const Footer:any = () => {
- return <h1>Footer</h1>;
+import React from 'react';
+
+const Footer: React.FC = () => {
+  return (
+    <footer className="footer">
+      <p>© 2025 MyApp. All rights reserved.</p>
+    </footer>
+  );
 };
+
 export default Footer;
